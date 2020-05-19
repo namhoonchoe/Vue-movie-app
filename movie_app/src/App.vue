@@ -1,18 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ul id=example>
+      <li v-for="fav in foods" :key="fav.food">
+        <p>I like {{fav.food}}</p>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return{
+      foods:[
+        {food:'kimchi'},
+        {food:'suyook'},
+        {food:'chukumi'},
+        {food:'jokbal'}
+      ]
+    }
   }
+  
 }
 </script>
 
