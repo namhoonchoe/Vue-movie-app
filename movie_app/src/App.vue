@@ -4,7 +4,8 @@
       <p>Loading ...</p>
     </div>
     <div v-else>
-     <movieList v-bind="movieList"/>
+     <movieList v-for="movies in movieList" :key="movies.id"
+                v-bind:movie="movies"/>
     </div>
   </div>
 </template>
@@ -21,36 +22,34 @@ export default {
   data(){
     return {
       isLoading: true,
-      movieList: []
-    };
+      movieList:[],
+      movies:[]
+    }
   },
   methods: {
-      async fetchMovies() {
-        await axios
-            .get('https://yts-proxy.now.sh/list_movies.json')
-            .then(Response => (this.movieList = Response.data.data.movies[1]))
-       this.isLoading = false;
-       
-      },
-     /*getArg(){
-        const {movieItem} = this.movieList.data.data.movies;
-        const movieArg = {  id:movieItem.id,
-                            year:movieItem.year,
-                            title:movieItem.title,
-                            summary:movieItem.summary,
-                            poster:movieItem.poster
-        }
-        
-      }*/
-    
- 
-  },
-
-  mounted() {
-    this.fetchMovies();
+     async fetchMovies() {
+        await axios.get('https://yts-proxy.now.sh/list_movies.json/')
+         .then(res => (this.movieList = res.data.data.movies))
+         .catch(err => console.log(err));
+        this.isLoading = false;
+        const [movies] = this.movieList;
+        this.movies = [movies]
+      } 
+      
   },  
-
-}
+  created() {
+      this.fetchMovies();
+     
+  },
+ /* mounted(){
+    const getMoives  = () =>{
+      this.movieList.map()
+    }*/
+  }
+  
+  
+  
+  
 
 
 </script>
