@@ -1,16 +1,19 @@
 <template>
     <div class ="movieCard">
-        <p>{{movie.title}}</p>
-        <img :src=movie.medium_cover_image alt="sorry the image is broken">
-        <p>{{movie.id}}</p>
-        <p>{{movie.summary}}</p>
-        <p>{{movie.year}}</p>
+      <movieCard v-bind="{title:movie.title,
+                          coverImg:movie.medium_cover_image,
+                          id:movie.id,
+                          summary:movie.summary,
+                          genres:movie.genres}"/>
     </div>
-    
 </template>
 
 <script>
+import movieCard from './movieCard'
 export default {
+    components:{
+      movieCard
+    },
     name:'Movie',
     props:['movie']
 };

@@ -40,12 +40,8 @@ export default {
   created() {
       this.fetchMovies();
      
-  },
- /* mounted(){
-    const getMoives  = () =>{
-      this.movieList.map()
-    }*/
   }
+}
   
   
   
