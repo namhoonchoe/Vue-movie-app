@@ -1,10 +1,13 @@
 <template>
     <div class ="movieCard">
+      <router-link to="/Detail">
       <movieCard v-bind="{title:movie.title,
                           coverImg:movie.medium_cover_image,
                           id:movie.id,
                           summary:movie.summary,
                           genres:movie.genres}"/>
+      </router-link>
+                    
     </div>
 </template>
 
