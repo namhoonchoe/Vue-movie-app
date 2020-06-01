@@ -1,10 +1,10 @@
 <template>
-  <div>{{ $route.title.id}}</div>
+  <div>hello</div>
 </template>
 
 <script>
 export default {
-  name:'Detail'
+  name:'detail'
 }
 </script>
 
