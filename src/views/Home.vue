@@ -27,7 +27,7 @@ export default {
     }
   },
   methods: {
-     async fetchMovies() {
+      async fetchMovies() {
         await axios.get('https://yts-proxy.now.sh/list_movies.json/')
          .then(res => (this.movieList = res.data.data.movies))
          .catch(err => console.log(err));
@@ -36,9 +36,10 @@ export default {
         this.movies = [movies]
       } 
       
+      
   },  
   created() {
-      this.fetchMovies();
+    this.fetchMovies();
      
   }
 }
