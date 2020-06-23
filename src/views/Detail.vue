@@ -1,10 +1,12 @@
 <template>
-    <p>Use Vuex or store pattern for detail page</p>
+    <div>
+    </div>
 </template>
 
 <script>
 export default {
     name:'detail',
+    
 }
 </script>
 

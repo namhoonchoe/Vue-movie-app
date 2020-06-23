@@ -1,11 +1,13 @@
 <template>
-    <div class ="movieCard">
-      <router-link to='/detail'>
+    <div class ="movie-card" @click="sendingProps">
+      <router-link to='/detail' >
         <movieCard v-bind="{title:movie.title,
-                          coverImg:movie.medium_cover_image,
-                          id:movie.id,
-                          summary:movie.summary,
-                          genres:movie.genres}"/>
+                            coverImg:movie.medium_cover_image,
+                            year:movie.year,
+                            id:movie.id,
+                            summary:movie.summary,
+                            genres:movie.genres}"
+                   />
        </router-link>
                   
    </div>
@@ -21,14 +23,24 @@ export default {
     },
     name:'Movie',
     props:['movie'],
+    methods: {
+      sendingProps() {
+        this.$store.commit('getTitle',this.movie.title)
+      }
+    }
+   
+    
+    
+   
+   
+}
+     
 
 
-
-};
 
 
 </script>
 
-<style>
-
+<style scoped>
+  
 </style>
