@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state: {
         title: '',
-        //year:Number
+        year:Number
     },
     getters:{
         title: state => {
@@ -19,6 +19,18 @@ export const store = new Vuex.Store({
     mutations: {
         getTitle(state, payload) {
             state.title = payload;
-        }
+        },
+       /* getYear(state, payload) {
+            state.year = payload;
+        }*/
+    },
+    actions:{
+        sendingTitle({commit}, payload) {
+            commit("getTitle",payload);
+        },
+       /* sendingYear({commit}, payload) {
+            commit("getYear",payload);
+        }*/
+
     }
 });
