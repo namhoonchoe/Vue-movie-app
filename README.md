@@ -1,24 +1,8 @@
 # movie_app
 
-## Project setup
-```
-npm install
-```
+Moive app with vue js
+---------------------
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Simple movie app with vuex
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
